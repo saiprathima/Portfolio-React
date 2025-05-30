@@ -11,7 +11,6 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -26,7 +25,7 @@ const Header = () => {
         Skip to main content
       </a>
 
-      {/* Hidden Navbar */}
+      {/* Animated Header on Scroll */}
       <AnimatePresence>
         {isScrolled && (
           <motion.div
@@ -78,7 +77,7 @@ const Header = () => {
         )}
       </AnimatePresence>
 
-      {/* Initial Header */}
+      {/* Static Header (always visible) */}
       <div className="fixed top-0 left-0 right-0 z-40" role="banner">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
