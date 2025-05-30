@@ -2,22 +2,15 @@
   "version": 2,
   "builds": [
     {
-      "src": "server.js",
-      "use": "@vercel/node"
-    },
-    {
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist"
+        "distDir": "dist",
+        "buildCommand": "npm run build"
       }
     }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "server.js"
-    },
     {
       "src": "/assets/(.*)",
       "headers": {
@@ -29,6 +22,13 @@
       "src": "/(.*\\.js)",
       "headers": {
         "content-type": "application/javascript"
+      },
+      "continue": true
+    },
+    {
+      "src": "/(.*\\.css)",
+      "headers": {
+        "content-type": "text/css"
       },
       "continue": true
     },
