@@ -70,7 +70,7 @@ const Footer = () => {
               <ul className="space-y-2" role="list">
                 <li>
                   <a
-                    href="https://github.com/saiprathima"
+                    href="https://github.com/saiprathimaparsa"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-gray-300 transition-colors"
@@ -100,11 +100,11 @@ const Footer = () => {
             <address className="not-italic" aria-labelledby="footer-contact-heading">
               <p className="mb-2">
                 <a 
-                  href="mailto:prathima.parsa@gmail.com" 
+                  href="mailto:saiprathimaparsa@gmail.com" 
                   className="hover:text-gray-300 transition-colors"
-                  aria-label="Send email to prathima.parsa@gmail.com"
+                  aria-label="Send email to saiprathimaparsa@gmail.com"
                 >
-                  prathima.parsa@gmail.com
+                  saiprathimaparsa@gmail.com
                 </a>
               </p>
             </address>
