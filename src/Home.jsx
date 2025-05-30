@@ -17,6 +17,8 @@ const Home = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
           className="relative md:absolute md:top-[10rem] md:right-[18%] w-32 h-32 md:w-40 md:h-40 mx-auto mt-8 md:mt-0 rounded-full overflow-hidden shadow-xl border-4 border-white"
+          role="img"
+          aria-label="Prathima Parsa's profile picture"
         >
           <img 
             src={profileImage} 
@@ -25,24 +27,8 @@ const Home = () => {
           />
         </motion.div>
 
-        {/* Hero Section */}
-        <div className="pt-8 md:pt-24 pb-8">
-          <div className="max-w-3xl mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-center"
-            >
-              <h1 className="text-5xl md:text-6xl font-pacifico text-gray-800 mb-4">
-                Prathima Parsa
-              </h1>
-            </motion.div>
-          </div>
-        </div>
-
         {/* About Section */}
-        <div className="pb-12 px-4 sm:px-6 lg:px-8 bg-white/50">
+        <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8 bg-white/50" aria-labelledby="about-heading">
           <div className="w-[90%] sm:w-[70%] md:w-[50%] lg:w-[40%] mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -50,27 +36,28 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="sr-only">About Me</h2>
-              <p className="text-gray-600 leading-relaxed mb-6 text-left text-lg sm:text-xl md:text-2xl">
-                Hey there, welcome to my digital space!
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-6 text-left text-lg sm:text-xl md:text-2xl">
-                <strong>I'm Prathima — glad you're here!</strong>
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-6 text-left text-lg sm:text-xl md:text-2xl">
-                I'm a passionate frontend developer with a keen eye for design and a love for creating 
-                seamless user experiences. I specialize in building modern, responsive web applications 
-                using React, and I'm always excited to learn and implement new technologies.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-6 text-left text-lg sm:text-xl md:text-2xl">
-                I thrive on collaboration, creativity, and purposeful execution — and I believe that thoughtful UI can make technology feel effortless.
-              </p>
-              <p className="text-gray-600 leading-relaxed text-left text-lg sm:text-xl md:text-2xl">
-                Outside of tech, I find balance and creativity in gardening, yoga, and mindfulness practices — passions that help me stay centered and bring intention to both life and code.
-              </p>
+              <div className="prose prose-lg mt-12">
+                <p className="text-gray-600 leading-relaxed text-left text-lg sm:text-xl md:text-2xl">
+                  Hey there,
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-6 text-left text-lg sm:text-xl md:text-2xl">
+                  <strong>I am Prathima, welcome to my digital space — glad you're here!</strong>
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-6 text-left text-lg sm:text-xl md:text-2xl">
+                  I'm a passionate frontend developer with a keen eye for design and a love for creating 
+                  seamless user experiences. I specialize in building modern, responsive web applications 
+                  using React, and I'm always excited to learn and implement new technologies.
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-6 text-left text-lg sm:text-xl md:text-2xl">
+                  I thrive on collaboration, creativity, and purposeful execution — and I believe that thoughtful UI can make technology feel effortless.
+                </p>
+                <p className="text-gray-600 leading-relaxed text-left text-lg sm:text-xl md:text-2xl">
+                  Outside of tech, I find balance and creativity in gardening, yoga, and mindfulness practices — passions that help me stay centered and bring intention to both life and code.
+                </p>
+              </div>
             </motion.div>
           </div>
-        </div>
+        </section>
       </main>
 
       <Footer />
