@@ -11,6 +11,12 @@ const projects = [
     description: "An interactive AI chatbot built with React and Node.js that provides personalized responses and engages in meaningful conversations. Features include real-time responses, context awareness, and a modern, responsive UI.",
     skills: ["React", "Node.js", "Express", "OpenAI API", "Tailwind CSS", "Framer Motion"],
     link: "/chat"
+  },
+  {
+    title: "Portfolio Website",
+    description: "A modern portfolio website built with React and Node.js, featuring smooth animations and responsive design.",
+    technologies: ["React", "Node.js", "Tailwind CSS", "Framer Motion"],
+    link: "https://github.com/saiprathima/Portfolio-React"
   }
 ];
 
@@ -18,63 +24,58 @@ const Projects = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-white via-gray-50 to-gray-100 bg-fixed">
       <Header />
-      <main className="flex-grow">
-        <div className="pt-24 pb-8">
-          <div className="max-w-3xl mx-auto px-4">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl font-light mb-12 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600"
-            >
-              Projects
-            </motion.h1>
-            
-            <div className="space-y-16">
-              {projects.map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="group relative bg-white/50 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <h2 className="text-2xl font-light group-hover:text-gray-900 transition-colors duration-300">{project.title}</h2>
-                    {project.link && (
-                      <Link 
-                        to={project.link}
-                        className="text-gray-600 hover:text-gray-900 transition-colors duration-300 flex items-center gap-2 group/link"
-                      >
-                        Try it out 
-                        <motion.span
-                          initial={{ x: 0 }}
-                          whileHover={{ x: 5 }}
-                          transition={{ type: "spring", stiffness: 300 }}
+      <main id="main-content" className="flex-grow py-12 px-4 sm:px-6 lg:px-8" role="main">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">My Projects</h1>
+            <p className="text-lg text-gray-600">Here are some of the projects I've worked on</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list" aria-label="Project list">
+            {projects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-lg shadow-lg overflow-hidden"
+                role="listitem"
+              >
+                <div className="p-6">
+                  <h2 className="text-xl font-semibold text-gray-900 mb-2">{project.title}</h2>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <div className="mb-4">
+                    <h3 className="sr-only">Technologies used</h3>
+                    <div className="flex flex-wrap gap-2" role="list" aria-label="Technologies used">
+                      {project.skills?.map((skill, skillIndex) => (
+                        <span
+                          key={skillIndex}
+                          className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                          role="listitem"
                         >
-                          →
-                        </motion.span>
-                      </Link>
-                    )}
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.skills.map((skill, skillIndex) => (
-                      <motion.span
-                        key={skillIndex}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: skillIndex * 0.1 }}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors duration-300"
-                      >
-                        {skill}
-                      </motion.span>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+                  {project.link && (
+                    <Link 
+                      to={project.link}
+                      className="inline-block bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors"
+                      aria-label={`View ${project.title} on GitHub`}
+                    >
+                      View Project
+                    </Link>
+                  )}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </main>

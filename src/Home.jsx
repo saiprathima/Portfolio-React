@@ -10,7 +10,7 @@ const Home = () => {
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-white via-gray-50 to-gray-100">
       <Header />
       
-      <main className="flex-grow relative">
+      <main id="main-content" className="flex-grow relative" role="main">
         {/* Profile Picture */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -20,7 +20,7 @@ const Home = () => {
         >
           <img 
             src={profileImage} 
-            alt="Prathima Goutham" 
+            alt="Prathima Parsa - Frontend Developer" 
             className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
           />
         </motion.div>
@@ -50,11 +50,12 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
+              <h2 className="sr-only">About Me</h2>
               <p className="text-gray-600 leading-relaxed mb-6 text-left text-lg sm:text-xl md:text-2xl">
                 Hey there, welcome to my digital space!
               </p>
               <p className="text-gray-600 leading-relaxed mb-6 text-left text-lg sm:text-xl md:text-2xl">
-                <b>I'm Prathima — glad you're here!</b>
+                <strong>I'm Prathima — glad you're here!</strong>
               </p>
               <p className="text-gray-600 leading-relaxed mb-6 text-left text-lg sm:text-xl md:text-2xl">
                 I'm a passionate frontend developer with a keen eye for design and a love for creating 
