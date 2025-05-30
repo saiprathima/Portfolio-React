@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <footer className="bg-gray-900 text-white py-8" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,17 +20,42 @@ const Footer = () => {
             <nav aria-labelledby="footer-nav-heading">
               <ul className="space-y-2" role="list">
                 <li>
-                  <Link to="/" className="hover:text-gray-300 transition-colors" aria-label="Go to home page">
+                  <Link 
+                    to="/" 
+                    onClick={scrollToTop}
+                    className="hover:text-gray-300 transition-colors"
+                    aria-label="Go to home page"
+                  >
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/projects" className="hover:text-gray-300 transition-colors" aria-label="View projects">
+                  <Link 
+                    to="/projects" 
+                    onClick={scrollToTop}
+                    className="hover:text-gray-300 transition-colors"
+                    aria-label="View projects"
+                  >
                     Projects
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="hover:text-gray-300 transition-colors" aria-label="Contact me">
+                  <Link 
+                    to="/resume" 
+                    onClick={scrollToTop}
+                    className="hover:text-gray-300 transition-colors"
+                    aria-label="View resume"
+                  >
+                    Resume
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/contact" 
+                    onClick={scrollToTop}
+                    className="hover:text-gray-300 transition-colors"
+                    aria-label="Contact me"
+                  >
                     Contact
                   </Link>
                 </li>
@@ -49,7 +81,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://linkedin.com/in/prathima-parsa"
+                    href="https://linkedin.com/in/saiprathimaparsa"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-gray-300 transition-colors"
@@ -67,12 +99,12 @@ const Footer = () => {
             <h2 className="text-lg font-semibold mb-4" id="footer-contact-heading">Get in Touch</h2>
             <address className="not-italic" aria-labelledby="footer-contact-heading">
               <p className="mb-2">
-                <a
-                  href="mailto:saiprathimaparsa@gmail.com"
+                <a 
+                  href="mailto:prathima.parsa@gmail.com" 
                   className="hover:text-gray-300 transition-colors"
-                  aria-label="Send me an email"
+                  aria-label="Send email to prathima.parsa@gmail.com"
                 >
-                  saiprathimaparsa@gmail.com
+                  prathima.parsa@gmail.com
                 </a>
               </p>
             </address>
