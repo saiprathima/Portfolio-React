@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-8" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {/* Navigation Links */}
           <div>
             <h2 className="text-lg font-semibold mb-4" id="footer-nav-heading">Navigation</h2>
@@ -64,15 +64,15 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h2 className="text-lg font-semibold mb-4" id="footer-contact-heading">Contact</h2>
+            <h2 className="text-lg font-semibold mb-4" id="footer-contact-heading">Get in Touch</h2>
             <address className="not-italic" aria-labelledby="footer-contact-heading">
               <p className="mb-2">
                 <a
-                  href="mailto:prathima.parsa@gmail.com"
+                  href="mailto:saiprathimaparsa@gmail.com"
                   className="hover:text-gray-300 transition-colors"
                   aria-label="Send me an email"
                 >
-                  prathima.parsa@gmail.com
+                  saiprathimaparsa@gmail.com
                 </a>
               </p>
             </address>

@@ -62,9 +62,11 @@ const Home = () => {
                 seamless user experiences. I specialize in building modern, responsive web applications 
                 using React, and I'm always excited to learn and implement new technologies.
               </p>
+              <p className="text-gray-600 leading-relaxed mb-6 text-left text-lg sm:text-xl md:text-2xl">
+                I thrive on collaboration, creativity, and purposeful execution — and I believe that thoughtful UI can make technology feel effortless.
+              </p>
               <p className="text-gray-600 leading-relaxed text-left text-lg sm:text-xl md:text-2xl">
-                When I'm not coding, you'll find me exploring new design trends, contributing to 
-                open-source projects, or sharing my knowledge through technical writing.
+                Outside of tech, I find balance and creativity in gardening, yoga, and mindfulness practices — passions that help me stay centered and bring intention to both life and code.
               </p>
             </motion.div>
           </div>
