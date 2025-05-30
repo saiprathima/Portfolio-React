@@ -33,6 +33,13 @@
       "continue": true
     },
     {
+      "src": "/(.*\\.ico|.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.svg|.*\\.gif)",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      },
+      "continue": true
+    },
+    {
       "handle": "filesystem"
     },
     {
