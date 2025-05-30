@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import OpenAI from 'openai';
+import { OpenAI } from 'openai';
 import chatRoutes from './routes/chat.js';
 
 dotenv.config();
@@ -9,8 +9,13 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8000;
 
-// Configure CORS 
-app.use(cors());
+// CORS configuration
+app.use(cors({
+  origin: ['https://prathimaportfolio.vercel.app', 'http://localhost:3000'],
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
+
 // Body parsing middleware
 app.use(express.json());
 
@@ -40,6 +45,26 @@ app.use((err, req, res, next) => {
 
 // Use routes
 app.use('/api/chat', chatRoutes);
+
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok' });
+});
+
+// Chat endpoint
+app.post('/api/chat', async (req, res) => {
+  try {
+    const { message, askedQuestions = [] } = req.body;
+    
+    // Your existing chat logic here
+    // ...
+
+    res.json({ response: 'Success' });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {
